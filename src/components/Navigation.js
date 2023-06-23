@@ -20,10 +20,20 @@ function Navigation () {
         <Navbar.Brand href="#">React i18n</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className={locale === 'en' ? 'ms-auto' : 'me-auto'}>
-            <NavDropdown title={t('language')} id="basic-nav-dropdown">
-              <NavDropdown.Item href="#" onClick={() => changeLocale('en')}>English</NavDropdown.Item>
-              <NavDropdown.Item href="#" onClick={() => changeLocale('ar')}>العربية</NavDropdown.Item>
+          <Nav className={i18n.dir() === "ltr" ? "ms-auto" : "me-auto"}>
+            <NavDropdown title={t("language")} id="basic-nav-dropdown">              
+              <NavDropdown.Item href="#" onClick={() => changeLocale("en")}>
+                English
+              </NavDropdown.Item>            
+              <NavDropdown.Item href="#" onClick={() => changeLocale("ar")}>
+                العربية
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#" onClick={() => changeLocale("kr")}>
+                한국인
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#" onClick={() => changeLocale("es")}>
+                Español
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

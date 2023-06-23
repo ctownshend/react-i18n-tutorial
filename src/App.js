@@ -18,10 +18,10 @@ function App() {
     <LocaleContext.Provider value={{locale, setLocale}}>
       <Suspense fallback={<Loading />}>
         <Helmet htmlAttributes={{
-          lang: locale,
-          dir: locale === 'en' ? 'ltr' : 'rtl'
+          lang: locale,          
+          dir: i18n.dir()
         }} />
-        <ThemeProvider dir={locale === 'en' ? 'ltr' : 'rtl'}>
+        <ThemeProvider dir={i18n.dir()}>
           <Navigation />
           <Container>
             <Greeting />
